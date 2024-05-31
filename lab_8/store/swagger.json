@@ -1,0 +1,79 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My Store Project",
+        "description": "My Project Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Store",
+            "description": "API for fake store"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/store/setup": {
+            "get": {
+                "tags": [
+                    "Setup Service"
+                ],
+                "summary": "Sets up the data",
+                "responses": {
+                    "200": {
+                        "description": "This service sets up the data"
+                    }
+                }
+            }
+        },
+        "/store/getProducts": {
+            "get": {
+                "tags": [
+                    "Get Products Service"
+                ],
+                "summary": "Get specified products",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The limit of products"
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "description": "The product category selector"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "The product sorting order"
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "The product search selector"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to get products"
+                    }
+                }
+            }
+        }
+    }
+}
